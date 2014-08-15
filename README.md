@@ -28,7 +28,8 @@ Usage
 ----------
 ##### Dealing with 'custom' requests
 
-```from fancyhands import FancyhandsClient
+```python
+from fancyhands import FancyhandsClient
 
 api_key = 'your_api_key'
 secret = 'your_api_secret'
