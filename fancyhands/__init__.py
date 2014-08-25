@@ -61,7 +61,7 @@ class FancyhandsClient(object):
             'description': description,
             'bid': bid,
             'expiration_date': expiration_date.strftime('%Y-%m-%dT%H:%M:%SZ'),
-            'custom_fields': custom_fields,
+            'custom_fields': json.dumps(custom_fields),
             'test':test,
         }
 
