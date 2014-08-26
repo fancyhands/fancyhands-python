@@ -17,6 +17,10 @@ Installation
 --------------
 
 Just copy the fancyhands-python/fancyhands directory to your project or:
+```shell
+pip install fancyhands
+```
+or
 
 ```shell
 git clone https://github.com/fancyhands/fancyhands-python
