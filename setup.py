@@ -3,11 +3,18 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='fancyhands-python',
-    version='0.2dev',
+    name='fancyhands',
+    version='1.1',
+
+    description='fancyhands.com python API',
+    url='https://github.com/fancyhands/fancyhands-python',
+
+    author='Fancy Hands',
+    author_email='api@fancyhands.com',
+
     packages = find_packages(),
     license='MIT',
+
     install_requires = ['httplib2', 'oauth2',],
-    long_description=open('README.md').read(),
     include_package_data = True,
 )
