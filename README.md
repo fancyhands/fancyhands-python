@@ -39,7 +39,7 @@ client = FancyhandsClient(api_key, secret)
 # Get last 20 requests
 requests = client.custom_get()
 
-# Create a new request
+# Create a new custom request
 from datetime import datetime, timedelta
 
 title = 'Call Nicholas'
@@ -58,6 +58,14 @@ custom_field = {
 custom_fields.append(custom_field)
 
 request = client.custom_create(title, description, bid, expiration_date, custom_fields)
+
+# Create a new standard request
+
+title = "Call Ted"
+description = "Tell him his toast is ready"
+
+request = client.standard_create(title=title, description=description, bid=bid, expiration_date=expiration_date)
+
 ```
 
 License
