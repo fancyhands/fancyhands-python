@@ -86,7 +86,7 @@ class FancyhandsClient(object):
 
     # This will allow you to get any call request you have submitted.
     def call_get(self, key=None, status=None, cursor=None):
-        uri = '/api/v1/call/'
+        uri = '/api/v1/call/outgoing/'
 
         query_params = {
             'key': key,
@@ -102,7 +102,7 @@ class FancyhandsClient(object):
     # This will allow you to submit a call task. (phone) is the phone number to be called. (conversation) is the json encoded
     # script for the assistants.
     def call_create(self, phone=None, conversation=None, retry=False, retry_delay=0, retry_limit=0, test=False):
-        uri = '/api/v1/call/'
+        uri = '/api/v1/call/outgoing/'
 
         query_params = {
             'phone': phone,
