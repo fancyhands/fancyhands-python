@@ -38,6 +38,17 @@ class FancyhandsClient(object):
         return content
  
 
+    # just a simple echo request
+    def echo_get(self, params={}):
+        uri = '/api/v1/echo/'
+        return self.oauth_request(uri=uri, query_params=params, http_method='GET')
+
+    # just a simple echo request
+    def echo_post(self, params={}):
+        uri = '/api/v1/echo/'
+        return self.oauth_request(uri=uri, query_params=params, http_method='POST')
+    
+    
     ##########################################################################################
     # Custom API
     ##########################################################################################
