@@ -118,7 +118,7 @@ class FancyhandsClient(object):
     # This will allow you to submit a call task. (phone) is the phone number to be called. (conversation) is the json encoded
     # script for the assistants.
     def outgoing_create(self, phone=None, conversation=None, title=None, record=False, retry=False, retry_delay=None,
-                        retry_limit=None, call_window_start=None, call_window_end=None, test=False):
+                        retry_limit=None, call_window_start=None, call_window_end=None, test=False, timeout=60, voicemail=False):
         uri = '/api/v1/call/outgoing/'
 
         query_params = {
@@ -130,6 +130,8 @@ class FancyhandsClient(object):
             'retry_limit':retry_limit,
             'title':title,
             'test':test,
+            'timeout':timeout,
+            'voicemail':voicemail,
         }
 
         query_params = {i:j for i,j in query_params.items() if j != None}
