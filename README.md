@@ -93,7 +93,7 @@ retry_delay = 60 * 60 * 2
 # How many times to retry the call
 retry_limit = 3
 
-request = client.call_create(phone=phone, conversation=conversation, retry=retry, retry_delay=retry_delay, retry_limit=retry_limit)
+request = client.outgoing_create(phone=phone, conversation=conversation, retry=retry, retry_delay=retry_delay, retry_limit=retry_limit)
 
 
 ```
