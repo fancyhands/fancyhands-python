@@ -289,3 +289,49 @@ class FancyhandsClient(object):
         }
 
         return self.oauth_request(uri=uri, query_params=query_params, http_method='POST')
+
+
+    ##########################################################################################
+    # Realtime API
+    ##########################################################################################
+
+    def realtime_request_create(self, title=None):
+        uri = '/api/v1/realtime/request/'
+        query_params = {
+            'title': title,
+        }
+        return self.oauth_request(uri=uri, query_params=query_params, http_method='POST')
+
+    def realtime_request_get(self, key=None, cursor=None):
+        uri = '/api/v1/realtime/request/'
+        query_params = {}
+        if key:
+            query_params['key'] = key
+        if cursor:
+            query_params['cursor'] = cursor            
+        return self.oauth_request(uri=uri, query_params=query_params, http_method='GET')
+
+    def realtime_message_create(self, request_key=None, content=None):
+        uri = '/api/v1/realtime/message/'
+        query_params = {
+            'request_key': request_key,
+            'content': content,            
+        }
+        return self.oauth_request(uri=uri, query_params=query_params, http_method='POST')
+
+    def realtime_message_get(self, request_key=None, cursor=None):
+        uri = '/api/v1/realtime/message/'
+        query_params = {}
+        if request_key:
+            query_params['request_key'] = request_key
+        if cursor:
+            query_params['cursor'] = cursor
+        return self.oauth_request(uri=uri, query_params=query_params, http_method='GET')
+    
+    
+    def realtime_request_close(self, key=None):
+        uri = '/api/v1/realtime/close/'
+        query_params = {
+            'key': key,
+        }
+        return self.oauth_request(uri=uri, query_params=query_params, http_method='POST')
