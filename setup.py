@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='fancyhands',
-    version='1.3',
+    version='1.5',
 
     description='fancyhands.com python API',
     url='https://github.com/fancyhands/fancyhands-python',

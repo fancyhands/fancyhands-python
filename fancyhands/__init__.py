@@ -9,12 +9,13 @@ class FancyhandsClient(object):
     ##########################################################################################
     # Utility
     ##########################################################################################
-    def __init__(self, api_key, secret):
+    def __init__(self, api_key, secret, api_host=None):
+        self.api_host = api_host if api_host else API_HOST
         self.api_key = api_key
         self.secret = secret
 
     def oauth_request(self, uri='', query_params={}, http_method='GET'):
-        url = API_HOST + uri
+        url = self.api_host + uri
 
         consumer = oauth.Consumer(key=self.api_key, secret=self.secret)
         client = oauth.Client(consumer)
